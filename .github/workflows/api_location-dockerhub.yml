@@ -31,4 +31,4 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: pausch94/api_location:latest
+          tags: pausch94/nd064-udaconnect-location-api:latest
