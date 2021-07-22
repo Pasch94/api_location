@@ -6,7 +6,7 @@ RUN apk add --no-cache gcc g++ musl-dev linux-headers geos libc-dev postgresql-d
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
-EXPOSE 5000
+EXPOSE 5001
 
 COPY . .
 CMD ["flask", "run", "--host", "0.0.0.0"]
