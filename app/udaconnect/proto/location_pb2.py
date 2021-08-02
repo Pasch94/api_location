@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0elocation.proto\"e\n\x08Location\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x11\n\tperson_id\x18\x02 \x01(\x05\x12\x11\n\tlongitude\x18\x03 \x01(\x02\x12\x10\n\x08latitude\x18\x04 \x01(\x02\x12\x15\n\rcreation_time\x18\x05 \x01(\t\"\x1d\n\x0fLocationRequest\x12\n\n\x02id\x18\x01 \x01(\x05\",\n\x0cLocationList\x12\x1c\n\tlocations\x18\x01 \x03(\x0b\x32\t.Location2Y\n\x0fLocationService\x12\x1e\n\x06\x43reate\x12\t.Location\x1a\t.Location\x12&\n\x03Get\x12\x10.LocationRequest\x1a\r.LocationListb\x06proto3'
+  serialized_pb=b'\n\x0elocation.proto\"e\n\x08Location\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x11\n\tperson_id\x18\x02 \x01(\x05\x12\x11\n\tlongitude\x18\x03 \x01(\x02\x12\x10\n\x08latitude\x18\x04 \x01(\x02\x12\x15\n\rcreation_time\x18\x05 \x01(\x02\"\x1d\n\x0fLocationRequest\x12\n\n\x02id\x18\x01 \x01(\x05\",\n\x0cLocationList\x12\x1c\n\tlocations\x18\x01 \x03(\x0b\x32\t.Location2Y\n\x0fLocationService\x12\x1e\n\x06\x43reate\x12\t.Location\x1a\t.Location\x12&\n\x03Get\x12\x10.LocationRequest\x1a\r.LocationListb\x06proto3'
 )
 
 
@@ -63,8 +63,8 @@ _LOCATION = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='creation_time', full_name='Location.creation_time', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      number=5, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),

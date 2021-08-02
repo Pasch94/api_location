@@ -9,7 +9,7 @@ message Location {
   int32 person_id = 2;
   float longitude = 3;
   float latitude = 4;
-  string creation_time = 5;
+  float creation_time = 5;
 
 }
 
