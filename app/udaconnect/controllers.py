@@ -4,6 +4,8 @@ import os
 
 from datetime import datetime
 
+from shapely.geometry import Point
+from geoalchemy2.shape import from_shape
 from app.udaconnect.proto.location_pb2 import LocationRequest
 from app.udaconnect.proto.location_pb2_grpc import LocationServiceStub
 from app.udaconnect.models import Location
@@ -52,7 +54,11 @@ class LocationResource(Resource):
     def get(self, location_id) -> Location:
         location = grpc_stub.Get(LocationRequest(id=int(location_id)))
         print("Got grpc response: {}".format(location))
-        return location
+        ret_location = Location()
+        ret_location.person_id = location.person_id
+        ret_location.coordinate = from_shape(Point(location.longitude, location.latitude))
+        ret_location.creation_time = datetime.fromtimestamp(location.creation_time)
+        return ret_location
 
 
 
