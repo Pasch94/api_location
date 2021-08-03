@@ -22,7 +22,7 @@ class LocationServiceStub(object):
         self.Get = channel.unary_unary(
                 '/LocationService/Get',
                 request_serializer=location__pb2.LocationRequest.SerializeToString,
-                response_deserializer=location__pb2.LocationList.FromString,
+                response_deserializer=location__pb2.Location.FromString,
                 )
 
 
@@ -52,7 +52,7 @@ def add_LocationServiceServicer_to_server(servicer, server):
             'Get': grpc.unary_unary_rpc_method_handler(
                     servicer.Get,
                     request_deserializer=location__pb2.LocationRequest.FromString,
-                    response_serializer=location__pb2.LocationList.SerializeToString,
+                    response_serializer=location__pb2.Location.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -94,6 +94,6 @@ class LocationService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/LocationService/Get',
             location__pb2.LocationRequest.SerializeToString,
-            location__pb2.LocationList.FromString,
+            location__pb2.Location.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

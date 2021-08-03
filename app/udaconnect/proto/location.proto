@@ -19,11 +19,7 @@ message LocationRequest {
 
 }
 
-message LocationList {
-  repeated Location locations = 1;
-}
-
 service LocationService {
   rpc Create(Location) returns (Location);
-  rpc Get(LocationRequest) returns (LocationList);
+  rpc Get(LocationRequest) returns (Location);
 }
