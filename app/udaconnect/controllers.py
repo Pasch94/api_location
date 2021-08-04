@@ -45,9 +45,8 @@ class LocationResource(Resource):
     @accepts(schema=LocationSchema)
     @responds(schema=LocationSchema)
     def post(self) -> Location:
-        kafka_data = request.get_json().encode()
-        kafka_producer = kafka_producer
-        kafka_producer.send(TOPIC_NAME, location)
+        kafka_data = request.get_json()
+        kafka_producer.send(TOPIC_NAME, kafka_data)
         return Response(status=202)
 
     @responds(schema=LocationSchema)
