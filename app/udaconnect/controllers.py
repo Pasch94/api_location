@@ -10,7 +10,6 @@ from app.udaconnect.proto.location_pb2 import LocationRequest
 from app.udaconnect.proto.location_pb2_grpc import LocationServiceStub
 from app.udaconnect.models import Location
 from app.udaconnect.schemas import LocationSchema
-from app.udaconnect.services import LocationService 
 from flask import request, Response, g
 from flask_accepts import accepts, responds
 from flask_restx import Namespace, Resource
