@@ -30,8 +30,8 @@ kafka_producer = KafkaProducer(
         client_id=__name__,
         value_serializer=lambda m: json.dumps(m).encode('utf-8'))
 
-GRPC_PORT = os.getenv('GRPC_PORT', '5005')
-GRPC_HOST = os.getenv('GRPC_HOST', 'localhost')
+GRPC_PORT = os.getenv('GRPC_LOCATION_PORT', '5005')
+GRPC_HOST = os.getenv('GRPC_LOCATION_HOST', 'localhost')
 
 print(':'.join([GRPC_HOST, GRPC_PORT]))
 GRPC_CHANNEL = grpc.insecure_channel(':'.join([GRPC_HOST, GRPC_PORT]), options=(('grpc.enable_http_proxy', 0),))
